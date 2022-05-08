@@ -21,7 +21,7 @@ async function run (){
         await client.connect();
         const perfumeCollection = client.db('perfumeGranary').collection('products');
         
-
+            // Products
         app.get('/product',async(req,res)=>{
             const query = {};
             const cursor = perfumeCollection.find(query);
@@ -29,7 +29,7 @@ async function run (){
             res.send(perfumes);
         })
 
-
+            //Products Details
         app.get('/productDetails/:id',async(req,res)=>{
             const id = req.params.id;
             const query = {_id : ObjectId(id)};
@@ -39,14 +39,14 @@ async function run (){
         })
 
 
-
+            // ADD
         app.post('/productDetails',async(req,res)=>{
             const newProduct = req.body;
             const result = await perfumeCollection.insertOne(newProduct);
             res.send(result);
         })
 
-
+            // DELETE
         app.delete('/productDetails/:id', async(req,res)=>{
             const id = req.params.id;
             const query = {_id : ObjectId(id)}
