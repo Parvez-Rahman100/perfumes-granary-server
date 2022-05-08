@@ -37,6 +37,14 @@ async function run (){
             res.send(perfume);
             
         })
+
+
+
+        app.post('/productDetails',async(req,res)=>{
+            const newProduct = req.body;
+            const result = await perfumeCollection.insertOne(newProduct);
+            res.send(result);
+        })
     }
     finally{
 
