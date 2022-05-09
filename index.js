@@ -56,19 +56,6 @@ async function run (){
 
 
 
-        // UPDATE
-    //     app.put('/productDetails/',async(req,res)=>{
-    //         const newQuantity = {quantity : Number (req.query.quantity)};
-    //         const id = req.query.id;
-    //         const find = {_id:ObjectId(id)}
-    //         const options = {upsert:true}
-    //         const updatedQuantity = {
-    //             $set:newQuantity
-    //         }
-    //         const result = await perfumeCollection.updateOne(find.updatedQuantity.options)
-    //     })
-
-
 
     app.put('/productDetails/:id', async (req, res) => {
         const id = req.params.id;
